@@ -1,1 +1,0 @@
-# figmaDesign2_Techfriar
