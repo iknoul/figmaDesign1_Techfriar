@@ -4,8 +4,275 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=poppins">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Helvetica">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/script.js" defer></script>
 </head>
 <body>
-    g
+    <header>        
+        <div class="leftContainer">
+            <img src="./public/icons/nameLogo.svg" alt="company name">
+            <img src="./public/icons/logo.svg" alt="company logo">
+        </div>
+        <div class="rightContainer">
+            <div class="socialLinks">
+                <a href="#subscribe"> <img src="./public/icons/facebookIconNotFill.svg" alt="face book icon"></a>
+                <a href="#subscribe"> <img src="./public/icons/instagramIconNotFill.svg" alt="instagram icon"></a>
+                <a href="#subscribe"> <img src="./public/icons/xIconNotFill.svg" alt="x icon"></a>
+                <a href="#subscribe"> <img src="./public/icons/linkdinIconNotFill.svg" alt="linkdin icon"></a>       
+            </div>
+            <div class="navigation">
+                <img src="./public/icons/bellIcon.svg" alt="notification icon">
+                <a href="" id="userLogo">
+                    <img src="./public/icons/userLogo.svg" alt="">
+                    <p>Jhon Doe</p>
+                </a>
+                <img id="closeIcon" src="./public/icons/crossIcon.svg" alt="close icon">
+            </div>
+            <p class="bottomText"> Sunday Pick Up/Drop-Off only at Dubai Silicon Oasis & Habtoor Grand Sales Counters | All Rates inclusive of VAT. T&C’s apply | Follow us on Social Media for New Offers</p>
+            
+            <div class="menuBarIcon">
+                <img src="./public/icons/menuBarIcon.svg" alt="menu">
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="bookCab" id="bookCab">
+            <button class="chat" id="call">
+                <img src="./public/icons/callIcon.svg" alt="call icon">
+            </button>
+            <button class="chat" id="bot">
+                <img src="./public/icons/chatIcon.svg" alt="chat icon">
+            </button>
+            <div class="types">
+                <p class="typeItem" id="sameAsPickUp" dataTarget="sameAsPickUp">Same as Pick-Up</p>
+                <p class="typeItem for" id="differentDropOff" dataTarget="differentDropOff">Different Drop-off</p>
+                <select id="vehicle" name="vehicle">
+                    <option value="" disabled selected>Select a vehicle type</option>
+                    <option value="car">Car</option>
+                    <option value="bike">Bike</option>
+                    <option value="auto">Auto</option>
+                    <option value="van">Van</option>
+                </select>                
+            </div>
+            <div class="data">
+                <div class="selectPickUp dataItem">
+                    <img src="./public/icons/locationIcon.svg" alt="">
+                    <p>PickUp location</p>
+                    <img id="arrowDown" src="./public/icons/arrowDownRed.svg" alt="">
+                </div>
+                <div class="options" >
+                    <!-- dynamically creating optionItem class -->
+                </div>  
+                <div class="differentDropOff dataItem">
+                    <img src="./public/icons/locationIcon.svg" alt="">
+                    <p>Dropdown location</p>
+                    <img id="arrowDown" src="./public/icons/arrowDownRed.svg" alt="">
+                </div>
+                <div class="options" id="forDifferentDrop">
+                    <!-- dynamically creating optionItem class -->
+                </div>  
+                
+                <div class="dateTimeContainer  dataItem">
+                    <img src="./public/icons/calenderIcon.svg" id="calendar-icon" alt="Calendar Icon">
+                    <input type="datetime-local" id="datetime-input" placeholder="mm/dd/yyyy __:__ __" >
+                </div>
+                <div class="dateTimeContainer dataItem">
+                    <img src="./public/icons/calenderIcon.svg" id="calendar-icon" alt="Calendar Icon">
+                    <input type="datetime-local" id="datetime-input" placeholder="mm/dd/yyyy __:__ __" >
+                </div>
+                
+                <div class="search">
+                    <button>
+                        <img src="./public/icons/clarity_search-line.svg" alt="">
+                    </button> 
+                </div>
+                <a href="" class="quickBook dataItem">
+                    Quick Book
+                </a> 
+            </div>
+            <div class="appPromotion">
+                <p id="appPromotionHead">Download our App for easy accessibility anytime, anywhere!</p>
+                <div class="links">
+                            <a href="">
+                                <img src="./public/icons/appleIcon.svg" alt="apple store">
+                                <div class="text">
+                                    <p>Download on the</p>
+                                    <p><strong>App Store</strong></p>
+                                </div>
+                            </a>
+                            <a href="">
+                                <img src="./public/icons/playStoreIcon.svg" alt="play store">
+                                <div class="text">
+                                    <p>Get IT ON</p>
+                                    <p><strong>Google Play</strong></p>
+                                </div>
+                            </a>
+                        </div> 
+            </div>
+        </section>
+         
+        <div class="bookButtonsMobile">
+            <button>Book a Car</button>
+            <button>Quick Book</button>
+        </div>
+
+        <section class="promotion" id="promotion">
+            <div class="getVoucher">
+                <h3>Recieve guarnteed <span>GIFT VOUCHER</span> on a monthly hire or lease</h3>
+            </div>
+            <div class="carImages">
+                <!-- dynamically creating child elements -->
+            </div>
+            <div class="carouselIndicators">
+                
+            </div>            
+        </section>
+        
+
+        <section class="popularCar" id="popularCar">
+            <h1>Most popular cars</h1>
+            <div id="car-container">
+                <!-- here i made the template for popular cars -->
+                <div id="car-template" class="carItem" style="display: none;">
+                    <div class="carImage">
+                        <img src="" alt="Car Image">
+                    </div>
+                    <div class="carDetails">
+                        <h3 class="carName">Car Name</h3>
+                        <p class="carDescription">Car description goes here.</p>
+                        <div class="carFeatures">
+                            <div class="feature people"><img src="./public/icons/peopleIcon.svg" alt=""><p></p></div>
+                            <div class="feature transmission"><img src="./public/icons/gearIcon.svg" alt=""><p></p></div>
+                            <div class="feature doors"><img src="./public/icons/game-icons_car-door.svg" alt=""><p></p></div>
+                            <div class="feature ac"><img src="./public/icons/streamline_hotel-air-conditioner.svg" alt=""><p></p></div>
+                        </div>
+                        <div class="bookNow">
+                            <p class="car-price">Price</p>
+                            <button class="book-now">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>            
+        </section>
+        <section class="subscribe" id="subscribe">
+            <div class="leftContainer">
+                <h3>Subscribe here for exclusive offers and updates!</h3>
+                <div class="inputs" placeholder="Name">
+                    <input type="text" id="name" placeholder="name">
+                    <input type="text" id="email" placeholder="email">
+                </div>
+                <p>Don't miss out! enter your email and your name, then hit subscribe to unlock a world of special offers and details.</p>
+                <button>Subscribe</button>
+            </div>
+            <div class="rightContainer">
+                <div class="mobileImg">
+                    <img src="./public/icons/mobileIcon.svg" alt="mobile image">
+                </div>
+                <div class="inputDiv">
+                    <label for="">Enter your number and receive a direct link to download the app</label>
+                    <input type="text" id="phoneNumber">
+                    <button class="getLink">Get the link</button>
+                    <div class="appPromotion">
+                        <p>Get in on</p>
+                        <div class="links">
+                            <a href="">
+                                <img src="./public/icons/appleIcon.svg" alt="apple store">
+                                <div class="text">
+                                    <p>Download on the</p>
+                                    <p><strong>App Store</strong></p>
+                                </div>
+                            </a>
+                            <a href="">
+                                <img src="./public/icons/playStoreIcon.svg" alt="play store">
+                                <div class="text">
+                                    <p>Get IT ON</p>
+                                    <p><strong>Google Play</strong></p>
+                                </div>
+                            </a>
+                        </div>                  
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="rentSteps" id="rent">
+            <h1>Rent/Lease In three easy steps</h1>
+            <div class="steps">
+                <div class="stepItem">
+                    <img src="./public/icons/o1Icon.svg" alt="">
+                    <div class="step">
+                        <img src="./public/icons/locationIconRed.svg" alt="">
+                        <p>Select the location. Browse through our available options and find the perfect car to suit your needs</p>
+                    </div>
+                </div>
+                <div class="stepItem">
+                    <img src="./public/icons/o2Icon.svg" alt="">
+                    <div class="step">
+                        <img src="./public/icons/calederIconRed.svg" alt="">
+                        <p>Choose your desired Pick-Up date and time.</p>
+                    </div>
+                </div>
+                <div class="stepItem">
+                    <img src="./public/icons/o3Icon.svg" alt="">
+                    <div class="step">
+                        <img src="./public/icons/carIconRed.svg" alt="">
+                        <p>Make payment and book the car. Select an option to either have the car delivered to your location or pick it up directly from us.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="location" id="locations">
+            <h1>Locations</h1>
+            <div class="locations">
+
+            </div>
+        </section>
+        <section class="frequentQuestions" id="questions">
+            <h1>Frequently asked questions</h1>
+            <div class="qestions">
+            <div class="questionItem" id="questionItemTemple" style="display: none;">
+                <div class="question">
+                    <h3></h3>
+                    <img src="./public/icons/plusMark.svg" alt="">
+                </div>
+                <p class="answer"></p>
+            </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="top" id="footer">
+            <div class="logo">
+                <img src="./public/icons/logo.svg" alt="logo">
+                <p>Member of the Al_Habtoor Group</p>
+            </div>
+            <div class="navs">
+               <div class="topNavs">
+                    
+               </div>
+               <p><strong>Al Habtoor Companies</strong></p>
+                <div class="bottomNavs">
+                </div>
+            </div>
+            <div class="followUs">
+                <h3>FOLLOW US ON</h3>
+                <div class="socialLinks">
+                    <img src="./public/icons/facebookFill.svg" alt="facebook">
+                    <img src="./public/icons/instagramFill.svg" alt="instagram">
+                    <img src="./public/icons/xFill.svg" alt="x">
+                    <img src="./public/icons/linkdinFill.svg" alt="linkdin">
+                    <img src="./public/icons/youtubeIcon.svg" alt="youtube">
+                </div>
+                <div class="cards">
+                    <img src="./public/icons/secureCard1.svg" alt="">
+                    <img src="./public/icons/secureCard2.svg" alt="">
+                </div>
+            </div>
+        </div>
+        <p class="bottom">
+            © 2018 Diamondlease LLC - All Rights Reserved. 
+        </p>
+    </footer>
 </body>
 </html>

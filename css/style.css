@@ -1,0 +1,947 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    ::-webkit-scrollbar{
+        display: none;
+    }
+    font-family: poppins;
+}
+body{
+    display: flex;
+    flex-direction: column;
+}
+header{
+    width: 100%;
+    height: 121px;
+    padding: 15px 64px 10px 64px;
+    display: flex;
+    justify-content: space-between;
+}
+header .leftContainer{
+    width: 25.5%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 14px;
+    align-items: center;
+}
+header .menuBarIcon, header .rightContainer .navigation #closeIcon{
+    display: none;
+}
+header .rightContainer{
+    /* width: calc(100%-370px); */
+    display: flex;
+    flex-direction: column;
+    gap: 23.5px;
+    position: relative;
+    align-items: end;
+}
+header .rightContainer .socialLinks{
+    width: fit-content;
+    height: 15.6px;
+    margin-bottom: 3.5px;
+    display: flex;
+    gap: 16px;
+}
+header .rightContainer .navigation{
+    width: 76.5%;
+    padding-left: 36px;
+    width: 100%;
+    display: flex;
+    gap: 32px;
+    align-items: center;
+}
+header .rightContainer .navigation .navigationItem{
+    color: black;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 22.5px;
+    text-align: left;
+
+}
+header .rightContainer .navigation #userLogo{
+    text-decoration: none;
+    color: white;
+    width: 114px;
+    height: 29px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px;
+    border-radius: 16px;
+    background-color: #000000
+}
+header .rightContainer .navigation #userLogo p{
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+}
+header .rightContainer .bottomText{
+    width: fit-content;
+    font-size: 10px;
+    font-weight: 400;
+    letter-spacing: -0.035em;
+    height: 7px;
+    gap: 0px;
+    opacity: 0.5px;
+    position: absolute;
+    bottom: 8px;
+    right: 0px;
+}
+
+main{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+}
+main .bookButtonsMobile{
+    display: none;
+}
+main .bookCab{
+    padding: 36px 81px;
+    margin: 0px 64px;
+    border-radius: 16px;
+    background-image: url('../public/icons/bookCabBg.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    gap: 30px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    position: relative;
+}
+main .bookCab .chat{
+    border: none;
+    background-color: white;
+    box-shadow: 0px 4px 4px 0px #00000040;
+    width: 48px;
+    height: 45px;
+    margin-right: -64px;
+    position: absolute;
+    border-radius: 50% 0 0 50%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    justify-content: center;
+    right: 0;
+}
+main .bookCab .chat:hover{
+    transform: scale(1.07);
+}
+main .bookCab #call{
+    margin-top: -49px;
+}
+main .bookCab #bot{
+    margin-top: 49px;
+}
+main .bookCab .types{
+    display: flex;
+    height: 20px;
+}
+main .bookCab .types{
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: -0.035em;
+
+}
+main .bookCab .types .typeItem{
+    cursor: pointer;
+}
+main .bookCab .types .typeItem.active, main .bookCab .types .typeItem:hover{
+    border-bottom: 1px solid white;
+}
+main .bookCab .types select{
+    width: 169px;
+    height: 29px;
+    border: none;
+    border-radius: 16px;
+    appearance: none; /* Remove default appearance in some browsers */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    outline: none;
+    padding: 0 16px;
+    background: url('../public/icons/arrowDownWhite.svg') no-repeat right 16px center; 
+    background-color: rgba(255, 255, 255, 0.247);
+}
+main .bookCab .types option{
+    background-color: rgba(167, 31, 31, 0.893);
+    letter-spacing: -0.035em;
+    padding-left: 16px;
+}
+main .bookCab .data{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.36%;
+    row-gap: 10px;
+    position: relative; 
+}
+main .bookCab .data .dataItem{
+    cursor: pointer;
+    width: 20.15%;
+    height: 42px; 
+    border-radius: 18px;
+    outline: none;
+    padding: 0 16px;
+    background-color: rgb(254, 254, 254);
+    display: flex;
+    position: relative;
+    gap: 10px;
+    align-items: center;
+    /* font-size: 12px; */
+    font-weight: 400;
+}
+main .bookCab .data #arrowDown{
+    position: absolute;
+    right: 18px;
+}
+main .bookCab .data select option{
+    text-align: left;
+    padding-left: 16px;
+}
+main .bookCab .differentDropOff.dataItem{
+    display: none;
+}
+
+main .bookCab .data .options{
+    width: 172px;
+    height: 110px;
+    margin-top: 46px;
+    margin-left: 8px;
+    background-color: #f7f7f7c9;
+    border-radius: 8px;
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    z-index: 10;
+    overflow-y: scroll;
+    gap: 8px;
+    align-items: center;
+}
+#forDifferentDrop{
+    margin-left: 212px;
+}
+main .bookCab .data .selectPickUp.active + .options{
+    display: flex;  
+}
+main .bookCab .data .differentDropOff.active + .options{
+    display: flex;  
+}
+main .bookCab .data .optionItem{  
+    border-radius: 8px;
+    width: 100%;
+    padding-top: 8px;
+    height: 32px;
+    text-align: center;
+    color: rgb(18, 13, 13);
+}
+main .bookCab .data .optionItem:hover{
+    background-color: #2b2727d8;
+}
+main .bookCab .data input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+    background: transparent;
+    bottom: 0;
+    color: transparent;
+    cursor: pointer;
+    height: auto;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: auto;
+}
+main .bookCab .data #datetime-input {
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
+    text-align: left;
+    color: #000;
+    flex-grow: 1;
+    background-color: transparent;
+}
+main .bookCab .data .search{
+    padding-right: 16px;
+    border-right: 1px solid wheat;
+}
+main .bookCab .data .search button{
+    background-color: white;
+    border: none;
+    border-radius: 16px;
+    width: 64px;
+    height: 42px;
+}
+main .bookCab .data .quickBook{
+    width: 20.15%;
+    height: 42px;
+    text-decoration: none;
+    color: white;
+    background-color: transparent;
+    border-radius: 16px;
+    justify-content: center;
+    border: 1px solid white;
+}
+main .bookCab .data .quickBook:hover{
+    color: rgb(214, 10, 10);
+    background-color: white;
+}
+main .bookCab .appPromotion{
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+main .bookCab .appPromotion p{
+    padding-right: 10px;
+    font-size: 14px;
+    font-weight: 300;
+    text-align: left;
+    color: #ffffff;
+
+}
+/* following, defined styles for two classes with play store and app store links */
+main .bookCab .appPromotion .links, main .subscribe .rightContainer .links{
+    margin-top: 16px;
+    display: flex;
+    gap: 8px;
+}
+main .bookCab .appPromotion .links{
+    margin-top: 0px;
+}
+main .bookCab .appPromotion a, main .subscribe .rightContainer .links a{
+    text-decoration: none;
+    font-family:monospace;
+    color: #ffffff;
+    background-color: #f2f2f246;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    width: 103px;
+    height: 30px;
+    border-radius: 27px;
+    border: 1px solid #F2F2F2;
+}
+main .bookCab .appPromotion a{
+    background-color: #000;
+}
+main .bookCab .appPromotion .links .text, main .subscribe .rightContainer .links .text{
+    /* height: 18px; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    /* gap: 3px; */
+}
+main .bookCab .appPromotion .links p, main .subscribe .rightContainer .links p{
+    font-weight:100;
+    font-size: 6px;
+}
+main .bookCab .appPromotion .links strong, main .subscribe .rightContainer .links strong{
+    font-size: 12px;
+    font-weight: 450;
+}
+main .promotion {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    border-radius: 16px; /* For rounded corners */
+}
+main .promotion .getVoucher{
+    width: 337px;
+    position: absolute;
+    bottom: 100px;
+    color: white;
+    z-index: 10;
+}
+main .promotion .getVoucher h3{
+    font-size: 18.37px;
+    font-weight: 400;
+}
+main .promotion .getVoucher h3 span{
+    margin: 0 4px;
+    padding: 6px 18px;
+    border-radius: 32px;
+    background-color: #009046;
+}
+main .promotion .carImages {
+    display: flex;
+    transition: transform 0.7s ease;
+}
+main .promotion .carItem {
+    padding: 0 64px;
+    overflow-x: hidden;
+    min-width: 100%; /* Ensures each image takes up 100% of the container width */
+    height: 405px;
+}
+main .promotion img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 16px; 
+}
+main .promotion .carouselIndicators {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 5px;
+}
+main .promotion .indicator {
+    width: 10px;
+    height: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.7s ease-in-out;
+}
+main .promotion .indicator.active {
+    background-color: #ec0505;
+}
+
+main .popularCar{
+    margin-top: 48px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+main .popularCar h1{
+    font-size: 34.74px;
+    font-weight: 400;
+    line-height: 52.11px;
+    text-align: center;
+    margin-bottom: 40px;
+}
+main .popularCar #car-container{
+    width: calc(100% - 64px);
+    height: 290px;
+    margin-left: 64px;
+    display: flex;
+    gap: 22px;
+    overflow-x: scroll;
+}
+main .popularCar .carItem{
+    width: 754px;
+    display: flex;
+    position: relative;
+    border: 1px solid #D9D9D9;
+}
+main .popularCar .carItem .carImage{
+    width: 360px;
+}
+main .popularCar .carItem .carImage img{
+    width: 100%;
+}
+main .popularCar .carItem .carDetails{
+    width: 394px;
+    padding: 25px 40px 25px 40px;
+}
+main .popularCar .carItem .carName{
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 42px;
+    text-align: left;
+}
+main .popularCar .carItem .carDescription{
+    font-family: Poppins;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18.5px;
+    text-align: left;
+}
+main .popularCar .carItem .carFeatures{
+    width: 100%;
+    display: flex;
+    position: absolute;
+    bottom: 96px;
+    gap: 24px;
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 16.5px;
+    letter-spacing: -0.02em;
+    align-items: start;
+}
+main .popularCar .carItem .feature{
+    display: flex;
+    gap: 8px;
+}
+main .popularCar .carItem .bookNow{
+    width: inherit;
+    display: flex;
+    position: absolute;
+    /* padding-left: 40px; */
+    padding-right: 98px;
+    justify-content: space-between;
+    align-items: center ;
+    bottom: 30px;
+}
+main .popularCar .carItem .bookNow .car-price{
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    text-align: left;
+    font-family: Poppins;
+}
+main .popularCar .carItem .bookNow .book-now, main .subscribe .leftContainer button{
+    width: 98px;
+    height: 37px;
+    border-radius: 4px;
+    border: none;
+    padding: 8px 15px 8px 15px;
+    background-color: #E21E26;
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    text-align: center;
+}
+main .popularCar .carItem .bookNow .book-now:hover, main .subscribe .leftContainer button:hover{
+    transform: scale(.98);
+    box-shadow: 1px 1px 1px 1px rgba(116, 32, 32, 0.301);
+}
+main .subscribe{
+    display: flex;
+    gap: 40px;
+    margin-top: 32px;
+    margin-bottom: 32px;
+    margin-left: 9.86%;
+    margin-right: 4.44%;
+    justify-content: end;
+}
+main .subscribe .leftContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+main .subscribe .leftContainer h3{
+    font-size: 34px;
+    font-weight: 400;
+    line-height: 51px;
+    text-align: left;
+    margin-bottom: 41px;
+
+}
+main .subscribe .leftContainer .inputs{
+    display: flex;
+    gap: 18px;
+    margin-bottom: 16px;
+}
+main .subscribe .leftContainer input{
+    width: 48.06%;
+    height: 45px;
+    border: none;
+    background-color: #F8F8F8;
+    border-radius: 5px;
+    padding-left: 20px;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
+    text-align: left;
+
+}
+main .subscribe .leftContainer p{
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 21px;
+    text-align: left;
+    margin-bottom: 40px;
+}
+main .subscribe .leftContainer button{
+    width: 100%;
+    height: 57px;
+}
+
+main .subscribe .rightContainer{
+    width: 50%;
+    height: 506px;
+    padding-left: 5.75%;
+    padding-right: 4.87%;
+    align-items: center;
+    background-color: #ec0505;
+    display: flex;
+    justify-content: space-evenly;
+}
+main .subscribe .rightContainer .mobileImg{
+    width: 53.6%;
+    min-width: 155px;
+}
+main .subscribe .rightContainer .mobileImg img{
+    width: 100%;
+}
+main .subscribe .rightContainer .inputDiv{
+    display: flex;
+    flex-direction: column;
+}
+main .subscribe .rightContainer label{
+    color: white;
+    width: 97.14%;
+    height: 43px;
+    font-family: Poppins;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 21.5px;
+    text-align: left;
+
+}
+main .subscribe .rightContainer input{
+    margin-top: 13px;
+    margin-bottom: 23px;
+    width: 97.14%;
+    height: 45px;
+}
+main .subscribe .rightContainer .getLink{
+    color: white;
+    width: 53.15%;
+    height: 42px;
+    margin-bottom: 45px;
+    border-radius: 8px;
+    background-color: black;
+}
+main .rentSteps{
+    padding-left: 64px;
+    padding-right: 64px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+main .rentSteps h1{
+    font-size: 34px;
+    font-weight: 400;
+    margin-bottom: 40px;
+}
+main .rentSteps .steps{
+    display: flex;
+    gap: 50px;
+}
+main .rentSteps .stepItem{
+    width: 33%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+main .rentSteps .stepItem img{
+    width: 64px;
+}
+main .rentSteps .step{
+    border: 1px solid black;
+    max-width: 350px;
+    height: 178px;
+    padding: 16px 40px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    overflow-y: scroll;
+}
+
+main .rentSteps .step p{
+    font-family: Helvetica;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18.5px;
+    padding-bottom: 16px;
+    
+}
+
+main .location {
+    color: white;
+    height: 325px;
+    padding: 40px 56px;
+    margin: 80px 64px 56px 64px;
+    text-align: center;
+    background-color: black;
+
+}
+
+main .location h1{
+    font-size: 34px;
+    font-weight: 400;
+    line-height: 51px;
+    text-align: center;
+    margin-bottom: 80px;
+}
+main .location .locations{
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 110px;
+    row-gap: 20px;
+}
+main .locations .locationItem{
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-family: Open Sans;
+    font-size: 18.81px;
+    font-weight: 600;
+    line-height: 25.62px;
+    text-align: left;
+
+}
+main .frequentQuestions{
+    margin: 0 64px 96px 64px     
+}
+main .frequentQuestions h1{
+    font-size: 34px;
+    font-weight: 400;
+    line-height: 51px;
+    text-align: center;
+}
+main .frequentQuestions .questionItem{
+    display: flex;
+    flex-direction: column;
+    border-bottom: 2px solid #CDD6DA40;
+}
+main .frequentQuestions .questionItem:last-child{
+    border-bottom: none;
+}
+main .frequentQuestions .question{
+    display: flex;
+    justify-content: space-between;
+    padding: 24px 0;
+}
+main .frequentQuestions .question h3{
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 19.2px;
+    text-align: left;
+}
+main .frequentQuestions .answer{
+    color: #252222b5;
+    display: none;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24.71px;
+    text-align: left;
+    padding-bottom: 24px;
+
+}
+main .frequentQuestions .questionItem:last-child .answer{
+    padding-bottom: 0px;
+}
+main .frequentQuestions .question.active + .answer{
+    display: block;
+}
+footer{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #000000;
+} 
+footer .top{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 64px 24px 64px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.502);
+
+}
+footer .top .logo{
+    display: flex;
+    flex-direction: column;
+}
+footer .top .logo img{
+    width: 56px;
+}
+footer .top p{   
+    color: white;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 18px;
+    text-align: left;
+
+}
+footer .top .logo p{
+    width: 105px;
+    font-size: 12px;
+}
+footer .top .navs{
+    width: 565px;
+    display: flex;
+    gap: 16px;
+    flex-direction: column;
+    /* align-items: center; */
+}
+footer .top .navs a{ 
+    text-decoration: none;
+    color: white;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 19.5px;
+    text-align: left;
+}
+footer .top .navs .topNavs, footer .top .navs .bottomNavs{
+    width: 100%;
+    display: flex;
+    gap: 21px;
+    flex-wrap: wrap;
+}
+footer .top .navs .topNavs .navItem{
+    width: 100px;
+    min-width: fit-content;  
+}
+footer .top .navs .topNavs .navRow{
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+footer .top .followUs{
+    width: 153px;
+}
+footer .top .followUs h3{
+    color: white;
+    margin-bottom: 10px;
+    font-size: 14px;
+    font-weight: 600;
+
+}
+.cards{
+    display: flex;
+    gap: 21px;
+    align-items: center;
+}
+.socialLinks{
+   width: 138px;
+   display: flex;
+   justify-content: space-between;
+   margin-bottom: 24px;
+}
+footer .bottom{   
+    width: 100%;
+    height: 69px;
+    margin-top:1px solid rgba(255, 255, 255, 0.502);
+    padding-top: 24px;
+    color: white;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+@media screen and (max-width: 1200px) {
+    header .rightContainer .navigation{
+        padding-left: 18px;
+        gap: 18px;
+    }
+    header .rightContainer .navigation #userLogo{
+        padding-right: 0;
+        width: 40px;
+    }
+    header .rightContainer .navigation #userLogo p{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1040px){
+    header{
+        padding: 15px 32px 10px 32px;
+    }
+    main .bookCab{
+        margin: 0px 32px;
+    }
+    main .bookCab .chat{
+        margin-right: -32px;
+    }
+    main .bookCab .dateTimeContainer{
+        gap: 3px !important;
+        padding: 0 5px !important;
+
+    }
+    main .promotion .carItem{
+        padding: 0 32px;
+    }
+    main .popularCar #car-container{
+        margin-left: 32px;
+    }
+    main .subscribe{
+        margin-left: 32px;
+    }
+    main .subscribe .leftContainer{
+        width: 35%;
+    }
+    main .subscribe .rightContainer{
+        width: 55%;
+        padding-left: 10px;
+    }
+}
+@media screen and (max-width:935px){
+    header .leftContainer img{
+        width: 89%;
+    }
+    main .bookCab{
+        height: 120px;
+    }
+    main .bookCab .data, main .bookCab .types{
+        display: none;
+    }
+    main .bookCab .appPromotion{
+        padding: 16px 40px;
+        width: 100%;
+        flex-direction: column;
+        gap: 18px;
+    }
+    main .bookCab .appPromotion #appPromotionHead{
+        width: 252px;
+    }
+}
+@media screen and (max-width:805px){
+    header{
+        align-items: center;
+    }
+    header .leftContainer {
+        width: 156px;
+    }
+    header .rightContainer{
+        position: absolute;
+        padding: 32px;
+        top: 0;
+        right: 0;
+    }
+    header .rightContainer .socialLinks, #userLogo, header .rightContainer p, header .rightContainer .navigation img{
+        display: none !important;
+    }
+   header .rightContainer .navigation{
+        /* display: none !important; */
+        z-index: 10;
+        background-color: #ffffff;
+        position: absolute;
+        right: -32px;
+        top: 0;
+        padding: 36px 33px 36px 16px ;
+        width: 300px;
+        flex-direction: column;
+   }
+   header .rightContainer .navigation #closeIcon{
+        display: block;
+        position: absolute;
+        top: 16px;
+        right: 16px;
+   }
+   header .rightContainer .navigation .navigationItem{
+        width: 100%;
+        height: 60px;
+        padding-top: 19.5px;
+        margin-left: 32px;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 21px;
+        text-align: left;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.11);
+   }
+   header .menuBarIcon{
+        display: block;
+   }
+
+}
