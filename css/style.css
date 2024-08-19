@@ -900,7 +900,7 @@ footer .orgCompaniesMobile{
     }
     main .subscribe{
         margin-left: 32px;
-    }
+    }   
     main .subscribe .leftContainer{
         width: 35%;
     }
@@ -1129,6 +1129,9 @@ footer .orgCompaniesMobile{
    main .bookCab .appPromotion #appPromotionHead{
         width: 90%;
     }
+    main .promotion .carItem{
+        height: 216px;
+    }
    main .popularCar #car-container{
     height: 333px;
    }
@@ -1314,6 +1317,9 @@ footer .orgCompaniesMobile{
     main .bookCab{
         margin: 0px 16px;
     }
+    main .bookCab .chat{
+        margin-right: -16px;
+    }
     main .bookCab .rightContainer{
         height: max-content;
     }
@@ -1327,11 +1333,22 @@ footer .orgCompaniesMobile{
         width: 100%;
     }
     main .promotion .carItem{
-        padding: 0;
+        padding: 0 16px;
         border-radius: 0 !important;
+    }
+    main .promotion .carItem{
+        padding: 0 16px;
     }
     main  .carItem img{
         border-radius: 0 !important;
+    }
+    main .popularCar #car-container{
+        width: 100%;
+        margin-left: 16px;
+        margin-right: 0;
+    }
+    main .subscribe{
+        margin-left: 16px;
     }
     main .subscribe .rightContainer .label{
         margin-top: 78% !important;
@@ -1343,9 +1360,27 @@ footer .orgCompaniesMobile{
     main .subscribe .rightContainer input{
         /* position: absolute; */
         margin-left: -40%;
-        width: 100%;
+        /* width: %; */
     }
     main .subscribe .rightContainer .getLink{
         margin-left: -40%;
+    }
+    main .rentSteps{
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+    main .location{
+        padding: 16px 0 24px 16px;
+        margin: 16px;
+    }
+    main .frequentQuestions{
+        margin-left: 16px;
+        margin-right: 16px;
+    }
+    footer .top{
+        padding: 16px;
+    }
+    footer .orgCompaniesMobile{
+        padding: 22px 16px;
     }
 }
