@@ -294,12 +294,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     })
 
-    // document.querySelector('.bookOnMobile').appendChild(document.querySelector('.types').classList.add('mobileTypes'))
-    // document.querySelector('.bookOnMobile').appendChild(document.querySelector('.data').classList.add('mobileDataField'))
-    // document.querySelector('.bookOnMobile').appendChild(document.createElement('button').classList.add('mobileSearchButton'))
-
-
-
     document.querySelectorAll('main .bookCab .types .typeItem').forEach((item, i)=>{
         item.addEventListener('click', ()=>{
             document.querySelectorAll('.types .typeItem').forEach(itemS => {
@@ -331,9 +325,20 @@ document.addEventListener("DOMContentLoaded", () => {
             item.classList.add('active')
         })
     })
-
+    document.querySelectorAll('.bookButtonsMobile button').forEach(item=>{
+        item.addEventListener('click', function(){
+            if(this.classList && this.classList.contains('active')){ 
+                this.classList.remove('active')
+                document.querySelector('main .bookOnMobile').style.display = 'none'
+            }
+            else{
+                this.classList.add('active')
+                document.querySelector('main .bookOnMobile').style.display = 'flex'
+            }
+        });
+    })
     
-    
+    document.querySelector('.forDifferentDropOff').style.display = 'none'
     document.querySelectorAll('.types .typeItem')[0].classList.add('active');
     document.querySelectorAll('.types .typeItem')[2].classList.add('active');
     document.querySelectorAll('.promotion .indicator')[0].classList.add('active');   
@@ -357,18 +362,6 @@ document.addEventListener("DOMContentLoaded", () => {
         document.querySelector('.navigation').classList.toggle('active')
     } )
 
-    document.querySelectorAll('.bookButtonsMobile button').forEach(item=>{
-        item.addEventListener('click', function(){
-            if(this.classList.contains('active')){ 
-                this.classList.remove('active')
-                document.querySelector('main .bookOnMobile').style.display = 'none'
-            }
-            else{
-                this.classList.add('active')
-                document.querySelector('main .bookOnMobile').style.display = 'flex'
-            }
-        });
-    })
 
     document.querySelector('main .mobileSearchButton').addEventListener('click', function(){
         document.querySelector('.bookButtonsMobile .book').classList.remove('active')
@@ -408,8 +401,3 @@ function autoSlide() {
 }
 
 setInterval(autoSlide, 3000); // Auto-slide every 2 seconds
-
-
-    
-
-

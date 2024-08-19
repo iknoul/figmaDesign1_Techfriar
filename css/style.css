@@ -43,6 +43,9 @@ header .rightContainer .socialLinks{
     display: flex;
     gap: 16px;
 }
+#loginButton{
+    display: none;
+}
 header .rightContainer .navigation{
     display: flex;
     justify-content: end;
@@ -599,7 +602,7 @@ main .subscribe .rightContainer .inputDiv{
 main .subscribe .rightContainer label{
     color: white;
     height: 45px;
-    width: 263px;
+    width: 90%;
     font-size: 14px;
     font-weight: 500;
     line-height: 21.5px;
@@ -926,6 +929,9 @@ footer .orgCompaniesMobile{
         display: flex;
         justify-content: space-between;
    }
+   main .bookButtonsMobile .forDifferentDropOff{
+    display: none;
+   }
    main .bookButtonsMobile button{
         width: 45%;
         height: 38px;
@@ -1003,7 +1009,7 @@ footer .orgCompaniesMobile{
         text-align: center !important;
     }
     main .subscribe .rightContainer input{
-        width: 80%;
+        width: 90%;
     }
     main .rentSteps{
         padding: 0 32px;
@@ -1089,13 +1095,15 @@ footer .orgCompaniesMobile{
     }
     header .rightContainer .navigation.active{
         display: flex !important;
-        z-index: 10;
+        z-index: 100;
         background-color: #ffffff;
         position: absolute;
         right: 0;
         top: 0;
+        justify-content: start;
         padding: 56px 0 36px 0 ;
         width: 300px;
+        height: 543px;
         flex-direction: column;
    }
    header .rightContainer .navigation.active #closeIcon{
@@ -1104,6 +1112,19 @@ footer .orgCompaniesMobile{
         position: absolute;
         top: 16px;
         right: 16px;
+   }
+   header .rightContainer .navigation.active #loginButton{
+        display: flex;
+        position: absolute;
+        bottom: 32px;
+        left: 32px;
+        width: 143px;
+        height: 29px;
+        color: white;
+        background-color: #000000;
+        border: none;
+        justify-content: center;
+        border-radius: 16px;
    }
    header .rightContainer .navigation .navigationItem{
         width: 100%;
@@ -1131,6 +1152,13 @@ footer .orgCompaniesMobile{
     }
     main .promotion .carItem{
         height: 216px;
+    }
+    main .popularCar h1{
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
+        padding-left: 16px;
+        text-align: left;
     }
    main .popularCar #car-container{
     height: 333px;
@@ -1214,6 +1242,13 @@ footer .orgCompaniesMobile{
         /* margin-top: 24px; */
         margin-bottom: 16px;
     }
+    main .subscribe .leftContainer h3{
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
+        text-align: left;
+
+    }
     main .subscribe{
         flex-direction: column;
     }
@@ -1244,7 +1279,7 @@ footer .orgCompaniesMobile{
     }
     main .subscribe .rightContainer .mobileImg{
         padding:0;
-        width: 35%;
+        width: 33%;
         min-width: 123px;
     }
     main .subscribe .rightContainer input{
@@ -1257,7 +1292,7 @@ footer .orgCompaniesMobile{
         position: absolute;
         color: white;
         padding-top: 19px;
-        left: 50%;
+        left: 40%;
         gap: 8px;
     }
     main .subscribe .rightContainer .appPromotion .links{
@@ -1281,11 +1316,10 @@ footer .orgCompaniesMobile{
     main .subscribe .rightContainer .links strong{
         font-size: 16px;
         font-weight: 500;
-    }
+    } 
     main .subscribe .rightContainer label{
-            margin-top: 70%;
+        margin-top: 57%;
     }
-
     main .location{
         margin: 32px;
         padding: 16px 16px 24px 16px;
@@ -1324,10 +1358,7 @@ footer .orgCompaniesMobile{
         height: max-content;
     }
     main .bookCab .rightContainer .inputDiv{
-        position: absolute;
-        margin-left: -30px !important;
-        align-items: start !important;
-        width: 80px !important;
+        position: static;
     }
     main .bookCab .appPromotion #appPromotionHead{
         width: 100%;
@@ -1343,27 +1374,30 @@ footer .orgCompaniesMobile{
         border-radius: 0 !important;
     }
     main .popularCar #car-container{
-        width: 100%;
+        width: calc(100% - 16px);
         margin-left: 16px;
         margin-right: 0;
     }
     main .subscribe{
         margin-left: 16px;
     }
-    main .subscribe .rightContainer .label{
-        margin-top: 78% !important;
-        width: 30%;
-        height: 60px;
-        flex-wrap: wrap;
-        overflow-y: visible;
+    
+    main .subscribe .rightContainer label{
+        position: absolute;
+        width: 250px;
+        bottom: 120px;
+        right: 5%;
     }
     main .subscribe .rightContainer input{
-        /* position: absolute; */
-        margin-left: -40%;
-        /* width: %; */
+        width: 90%;
+        position: absolute;
+        left: 19px;
+        bottom: 52px;
     }
     main .subscribe .rightContainer .getLink{
-        margin-left: -40%;
+        position: absolute;
+        left: 19px;
+        bottom: -24px;
     }
     main .rentSteps{
         padding-left: 16px;
@@ -1382,5 +1416,11 @@ footer .orgCompaniesMobile{
     }
     footer .orgCompaniesMobile{
         padding: 22px 16px;
+    }
+}
+@media screen and (max-width: 340px) {
+    main .bookCab .appPromotion {
+        padding: 0;
+        width: 100%;
     }
 }
