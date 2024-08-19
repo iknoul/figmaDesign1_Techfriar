@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=poppins">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Helvetica">
     <link rel="stylesheet" href="./css/style.css">
     <script src="./js/script.js" defer></script>
@@ -49,7 +51,7 @@
                 <p class="typeItem" id="sameAsPickUp" dataTarget="sameAsPickUp">Same as Pick-Up</p>
                 <p class="typeItem for" id="differentDropOff" dataTarget="differentDropOff">Different Drop-off</p>
                 <select id="vehicle" name="vehicle">
-                    <option value="" disabled selected>Select a vehicle type</option>
+                    <option value="" disabled selected>Select vehicle type</option>
                     <option value="car">Car</option>
                     <option value="bike">Bike</option>
                     <option value="auto">Auto</option>
@@ -114,10 +116,52 @@
         </section>
          
         <div class="bookButtonsMobile">
-            <button>Book a Car</button>
-            <button>Quick Book</button>
+            <button class="book">Book a Car</button>
+            <button class="book2">Quick Book</button>
         </div>
-
+        <div class="bookOnMobile">
+            <!-- mobileSearchButton -->
+            <div class="types">
+                <p class="typeItem" id="sameAsPickUp" dataTarget="sameAsPickUp">Same as Pick-Up</p>
+                <p class="typeItem" id="differentDropOff" dataTarget="differentDropOff">Different Drop-off</p>
+                <select id="vehicle" name="vehicle">
+                    <option value="" disabled selected>vehicle type</option>
+                    <option value="car">Car</option>
+                    <option value="bike">Bike</option>
+                    <option value="auto">Auto</option>
+                    <option value="van">Van</option>
+                </select>                
+            </div>
+            <div class="data">
+                <div class="selectPickUp dataItem">
+                    <img src="./public/icons/locationIcon.svg" alt="">
+                    <p>PickUp location</p>
+                    <img id="arrowDown" src="./public/icons/arrowDownRed.svg" alt="">
+                </div>
+                <div class="options" >
+                    <!-- dynamically creating optionItem class -->
+                </div>  
+                <div class="differentDropOff forDifferentDropOff dataItem">
+                    <img src="./public/icons/locationIcon.svg" alt="">
+                    <p>Dropdown location</p>
+                    <img id="arrowDown" src="./public/icons/arrowDownRed.svg" alt="">
+                </div>
+                <div class="options" id="forDifferentDrop">
+                    <!-- dynamically creating optionItem class -->
+                </div>  
+                
+                <div class="dateTimeContainer  dataItem">
+                    <img src="./public/icons/calenderIcon.svg" id="calendar-icon" alt="Calendar Icon">
+                    <input type="datetime-local" id="datetime-input" placeholder="mm/dd/yyyy __:__ __" >
+                </div>
+                <div class="dateTimeContainer dataItem">
+                    <img src="./public/icons/calenderIcon.svg" id="calendar-icon" alt="Calendar Icon">
+                    <input type="datetime-local" id="datetime-input" placeholder="mm/dd/yyyy __:__ __" >
+                </div>
+                
+                <button class="mobileSearchButton dataItem">Search</button>
+            </div>
+        </div>
         <section class="promotion" id="promotion">
             <div class="getVoucher">
                 <h3>Recieve guarnteed <span>GIFT VOUCHER</span> on a monthly hire or lease</h3>
@@ -247,6 +291,7 @@
                 <img src="./public/icons/logo.svg" alt="logo">
                 <p>Member of the Al_Habtoor Group</p>
             </div>
+            <img id="orgLogo" src="./public/icons/orgTitle.svg" alt="org logo">
             <div class="navs">
                <div class="topNavs">
                     
@@ -269,6 +314,9 @@
                     <img src="./public/icons/secureCard2.svg" alt="">
                 </div>
             </div>
+        </div>
+        <div class="orgCompaniesMobile">
+            <p><strong>Al Habtoor Companies</strong></p>
         </div>
         <p class="bottom">
             © 2018 Diamondlease LLC - All Rights Reserved. 
