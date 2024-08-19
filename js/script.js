@@ -269,10 +269,11 @@ document.addEventListener("DOMContentLoaded", () => {
         // Update the cloned template with car data
         clone.href = nav.href;
         clone.textContent = nav.text;
+        const clone1 = clone.cloneNode(true)
 
         // Append the clone to the container
         bottomNavs.appendChild(clone);
-        document.querySelector('footer .orgCompaniesMobile').appendChild(clone)
+        document.querySelector('footer .orgCompaniesMobile').appendChild(clone1)
     })
 
     Areas.forEach(area=>{

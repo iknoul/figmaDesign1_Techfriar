@@ -844,6 +844,9 @@ footer .bottom{
     font-size: 12px;
     font-weight: 500;
 }
+footer .orgCompaniesMobile{
+    display: none;
+}
 
 @media screen and (max-width: 1250px) {
     header .leftContainer{
@@ -1071,6 +1074,7 @@ footer .bottom{
     header{
         align-items: center;
     }
+    
     header .leftContainer {
         width: 156px;
     }
@@ -1119,6 +1123,12 @@ footer .bottom{
    header .menuBarIcon{
         display: block;
    }
+   main .bookCab{
+        padding: 36px;
+   }
+   main .bookCab .appPromotion #appPromotionHead{
+        width: 90%;
+    }
    main .popularCar #car-container{
     height: 333px;
    }
@@ -1219,7 +1229,7 @@ footer .bottom{
         height: 48px;
     }
     main .subscribe .leftContainer p{
-    margin-bottom: 16px;
+        margin-bottom: 16px;
     }
     main .subscribe .rightContainer{
         position: relative;
@@ -1313,9 +1323,8 @@ footer .bottom{
         align-items: start !important;
         width: 80px !important;
     }
-    main .bookCab .appPromotion #appPromotion{
-        width: 252px;
-        text-align: left !important;
+    main .bookCab .appPromotion #appPromotionHead{
+        width: 100%;
     }
     main .promotion .carItem{
         padding: 0;
