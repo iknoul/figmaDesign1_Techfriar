@@ -19,18 +19,17 @@ header{
     justify-content: space-between;
 }
 header .leftContainer{
-    width: 25.5%;
+    width: 28.2%;
     height: 100%;
     display: flex;
     justify-content: space-between;
-    gap: 14px;
+    gap: 32px;
     align-items: center;
 }
 header .menuBarIcon, header .rightContainer .navigation #closeIcon{
     display: none;
 }
 header .rightContainer{
-    /* width: calc(100%-370px); */
     display: flex;
     flex-direction: column;
     gap: 23.5px;
@@ -45,14 +44,13 @@ header .rightContainer .socialLinks{
     gap: 16px;
 }
 header .rightContainer .navigation{
-    width: 76.5%;
-    padding-left: 36px;
-    width: 100%;
     display: flex;
-    gap: 32px;
+    justify-content: end;
     align-items: center;
+    gap: 32px;
 }
 header .rightContainer .navigation .navigationItem{
+    width: fit-content;
     color: black;
     text-decoration: none;
     font-size: 15px;
@@ -66,6 +64,7 @@ header .rightContainer .navigation #userLogo{
     color: white;
     width: 114px;
     height: 29px;
+    margin-left: -22px;
     display: flex;
     align-items: center;
     gap: 8px;
@@ -76,19 +75,19 @@ header .rightContainer .navigation #userLogo{
 header .rightContainer .navigation #userLogo p{
     font-size: 14px;
     font-weight: 400;
-    line-height: 21px;
 }
 header .rightContainer .bottomText{
-    width: fit-content;
+    width: calc(100% + 200px);
     font-size: 10px;
     font-weight: 400;
     letter-spacing: -0.035em;
-    height: 7px;
     gap: 0px;
     opacity: 0.5px;
     position: absolute;
-    bottom: 8px;
+    bottom: 0;
     right: 0px;
+    text-align: right;
+    overflow-x: scroll;
 }
 
 main{
@@ -98,7 +97,7 @@ main{
     justify-content: center;
     gap: 8px;
 }
-main .bookButtonsMobile{
+main .bookButtonsMobile, .bookOnMobile{
     display: none;
 }
 main .bookCab{
@@ -139,26 +138,23 @@ main .bookCab #call{
 main .bookCab #bot{
     margin-top: 49px;
 }
-main .bookCab .types{
+main .bookCab .types, main .bookOnMobile .types{
     display: flex;
     height: 20px;
-}
-main .bookCab .types{
-    display: flex;
     align-items: center;
     gap: 32px;
+
+}
+main .bookCab .types .typeItem,  main .bookOnMobile .typeItem{
+    cursor: pointer;
     font-size: 14px;
     font-weight: 400;
     letter-spacing: -0.035em;
-
-}
-main .bookCab .types .typeItem{
-    cursor: pointer;
 }
 main .bookCab .types .typeItem.active, main .bookCab .types .typeItem:hover{
     border-bottom: 1px solid white;
 }
-main .bookCab .types select{
+main .bookCab .types select, main .bookOnMobile .types select{
     width: 169px;
     height: 29px;
     border: none;
@@ -170,13 +166,17 @@ main .bookCab .types select{
     padding: 0 16px;
     background: url('../public/icons/arrowDownWhite.svg') no-repeat right 16px center; 
     background-color: rgba(255, 255, 255, 0.247);
-}
-main .bookCab .types option{
-    background-color: rgba(167, 31, 31, 0.893);
+    font-size: 14px;
+    font-weight: 400;
     letter-spacing: -0.035em;
-    padding-left: 16px;
+    text-align: center;
+
 }
-main .bookCab .data{
+main .bookCab .types option, main .bookOnMobile .types option{
+    background-color: rgba(167, 31, 31, 0.893);
+    text-align: left;
+}
+main .bookCab .data, main .bookCab .bookOnMobile .data{
     width: 100%;
     display: flex;
     flex-wrap: wrap;
@@ -184,7 +184,7 @@ main .bookCab .data{
     row-gap: 10px;
     position: relative; 
 }
-main .bookCab .data .dataItem{
+main .bookCab .data .dataItem, main .bookOnMobile .dataItem{
     cursor: pointer;
     width: 20.15%;
     height: 42px; 
@@ -196,10 +196,19 @@ main .bookCab .data .dataItem{
     position: relative;
     gap: 10px;
     align-items: center;
-    /* font-size: 12px; */
+    font-size: 12px;
     font-weight: 400;
+    text-align: left;
+
 }
-main .bookCab .data #arrowDown{
+main .selectPickUp, main .differentDropOff{
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 19.5px;
+    text-align: center;
+
+}
+main .bookCab .data #arrowDown, main .bookOnMobile .data #arrowDown{
     position: absolute;
     right: 18px;
 }
@@ -207,11 +216,11 @@ main .bookCab .data select option{
     text-align: left;
     padding-left: 16px;
 }
-main .bookCab .differentDropOff.dataItem{
+main .bookCab .differentDropOff.dataItem, main .bookOnMobile .forDifferentDropOff .dataItem{
     display: none;
 }
 
-main .bookCab .data .options{
+main  .data .options{
     width: 172px;
     height: 110px;
     margin-top: 46px;
@@ -229,24 +238,24 @@ main .bookCab .data .options{
 #forDifferentDrop{
     margin-left: 212px;
 }
-main .bookCab .data .selectPickUp.active + .options{
+main .bookCab .data .selectPickUp.active + .options, main .bookOnMobile .data .selectPickUp.active + .options{
     display: flex;  
 }
-main .bookCab .data .differentDropOff.active + .options{
+main .bookCab .data .differentDropOff.active + .options, main .bookOnMobile .data .differentDropOff.active + .options{
     display: flex;  
 }
-main .bookCab .data .optionItem{  
-    border-radius: 8px;
+main .bookCab .data .optionItem, main .bookOnMobile .data .optionItem{  
     width: 100%;
     padding-top: 8px;
+    border-radius: 8px;
     height: 32px;
     text-align: center;
     color: rgb(18, 13, 13);
 }
-main .bookCab .data .optionItem:hover{
+main .bookCab .data .optionItem:hover, main .bookOnMobile .data .optionItem:hover{
     background-color: #2b2727d8;
 }
-main .bookCab .data input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+main .data input[type="datetime-local"]::-webkit-calendar-picker-indicator {
     background: transparent;
     bottom: 0;
     color: transparent;
@@ -258,7 +267,7 @@ main .bookCab .data input[type="datetime-local"]::-webkit-calendar-picker-indica
     top: 0;
     width: auto;
 }
-main .bookCab .data #datetime-input {
+main .data #datetime-input {
     width: 100%;
     border: none;
     outline: none;
@@ -285,6 +294,11 @@ main .bookCab .data .quickBook{
     width: 20.15%;
     height: 42px;
     text-decoration: none;
+    font-family: Poppins;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 18px;
+    text-align: left;
     color: white;
     background-color: transparent;
     border-radius: 16px;
@@ -319,13 +333,13 @@ main .bookCab .appPromotion .links{
 }
 main .bookCab .appPromotion a, main .subscribe .rightContainer .links a{
     text-decoration: none;
-    font-family:monospace;
     color: #ffffff;
     background-color: #f2f2f246;
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 6px;
+    justify-content: space-around;
+    padding-left: 6px;
+    text-align: left !important; 
     width: 103px;
     height: 30px;
     border-radius: 27px;
@@ -335,19 +349,17 @@ main .bookCab .appPromotion a{
     background-color: #000;
 }
 main .bookCab .appPromotion .links .text, main .subscribe .rightContainer .links .text{
-    /* height: 18px; */
+    height: 23px;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    /* gap: 3px; */
 }
 main .bookCab .appPromotion .links p, main .subscribe .rightContainer .links p{
     font-weight:100;
     font-size: 6px;
 }
 main .bookCab .appPromotion .links strong, main .subscribe .rightContainer .links strong{
-    font-size: 12px;
-    font-weight: 450;
+    font-size: 10px;
+    font-weight: 400;
 }
 main .promotion {
     width: 100%;
@@ -358,7 +370,7 @@ main .promotion {
     border-radius: 16px; /* For rounded corners */
 }
 main .promotion .getVoucher{
-    width: 337px;
+    width: 340px;
     position: absolute;
     bottom: 100px;
     color: white;
@@ -369,6 +381,9 @@ main .promotion .getVoucher h3{
     font-weight: 400;
 }
 main .promotion .getVoucher h3 span{
+    font-size: 15.22px;
+    font-weight: 600;
+    text-align: left;
     margin: 0 4px;
     padding: 6px 18px;
     border-radius: 32px;
@@ -454,7 +469,6 @@ main .popularCar .carItem .carName{
     text-align: left;
 }
 main .popularCar .carItem .carDescription{
-    font-family: Poppins;
     font-size: 12px;
     font-weight: 400;
     line-height: 18.5px;
@@ -487,11 +501,10 @@ main .popularCar .carItem .bookNow{
     bottom: 30px;
 }
 main .popularCar .carItem .bookNow .car-price{
-    font-size: 16px;
+    font-size: 14.5px;
     font-weight: 600;
     line-height: 24px;
     text-align: left;
-    font-family: Poppins;
 }
 main .popularCar .carItem .bookNow .book-now, main .subscribe .leftContainer button{
     width: 98px;
@@ -585,14 +598,14 @@ main .subscribe .rightContainer .inputDiv{
 }
 main .subscribe .rightContainer label{
     color: white;
-    width: 97.14%;
-    height: 43px;
-    font-family: Poppins;
+    height: 45px;
+    width: 263px;
     font-size: 14px;
     font-weight: 500;
     line-height: 21.5px;
     text-align: left;
-
+    border-radius: 5px;
+    border: none;
 }
 main .subscribe .rightContainer input{
     margin-top: 13px;
@@ -608,6 +621,7 @@ main .subscribe .rightContainer .getLink{
     border-radius: 8px;
     background-color: black;
 }
+
 main .rentSteps{
     padding-left: 64px;
     padding-right: 64px;
@@ -676,19 +690,17 @@ main .location h1{
 main .location .locations{
     display: flex;
     flex-wrap: wrap;
-    column-gap: 110px;
+    gap: 90px;
+    justify-content: space-evenly;
     row-gap: 20px;
 }
 main .locations .locationItem{
     display: flex;
     align-items: center;
     gap: 7px;
-    font-family: Open Sans;
     font-size: 18.81px;
-    font-weight: 600;
+    font-weight: 400;
     line-height: 25.62px;
-    text-align: left;
-
 }
 main .frequentQuestions{
     margin: 0 64px 96px 64px     
@@ -755,6 +767,9 @@ footer .top .logo{
 footer .top .logo img{
     width: 56px;
 }
+#orgLogo{
+    display: none;
+}
 footer .top p{   
     color: white;
     font-size: 13px;
@@ -774,7 +789,7 @@ footer .top .navs{
     flex-direction: column;
     /* align-items: center; */
 }
-footer .top .navs a{ 
+footer .top .navs a, footer .orgCompaniesMobile a{ 
     text-decoration: none;
     color: white;
     font-size: 13px;
@@ -830,14 +845,20 @@ footer .bottom{
     font-weight: 500;
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1250px) {
+    header .leftContainer{
+        gap: 18px;
+    }
+    header .leftContainer img{
+        width: 90%;
+    }
     header .rightContainer .navigation{
-        padding-left: 18px;
         gap: 18px;
     }
     header .rightContainer .navigation #userLogo{
         padding-right: 0;
-        width: 40px;
+        margin-left: 10px;
+        width: 50px;
     }
     header .rightContainer .navigation #userLogo p{
         display: none;
@@ -847,6 +868,15 @@ footer .bottom{
 @media screen and (max-width: 1040px){
     header{
         padding: 15px 32px 10px 32px;
+    }
+    header .leftContainer{
+        width: 156px;
+    }
+    header .rightContainer .navigation{
+        gap: 10px;
+    }
+    header .rightContainer .bottomText{
+        width: calc(100% + 300px);
     }
     main .bookCab{
         margin: 0px 32px;
@@ -886,6 +916,79 @@ footer .bottom{
     main .bookCab .data, main .bookCab .types{
         display: none;
     }
+    
+   main .bookButtonsMobile{
+        width: 100%;
+        padding: 16px 32px;
+        display: flex;
+        justify-content: space-between;
+   }
+   main .bookButtonsMobile button{
+        width: 45%;
+        height: 38px;
+        max-width: 400px;
+        border-radius: 4px;
+        border: 1px solid #E21E26;
+   }
+   main .bookButtonsMobile button:first-child{
+        background-color: #E21E26;
+        color: white;
+   }
+   main .bookButtonsMobile button:last-child{
+        background-color: white;
+        color: #E21E26;
+   }
+   main .bookOnMobile{
+        display: none;
+        flex-direction: column;
+        margin: 16px 32px 24px 32px;
+   }
+   main .bookOnMobile .types{
+        width: 100%;   
+        display: flex;
+        margin-bottom: 24px;
+        gap: 10px;
+   }
+ 
+   main .bookOnMobile .typeItem{
+        font-size: 13px;
+   }
+   main .bookOnMobile .types select{
+        width: 125px;
+        background: url('../public/icons/arrowDoenBlack.svg') no-repeat right 16px center; 
+   }
+   main .bookOnMobile .types .typeItem.active, main .bookOnMobile .types .typeItem:hover{
+         border-bottom: 1px solid rgba(4, 4, 4, 0.683);       
+   }
+   main .bookOnMobile .data{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+   }
+   main .bookOnMobile .dataItem{
+        width: 100%;
+        padding: 16px;
+        text-align: left;
+        display: flex;
+        border-radius: 8px;
+        background-color: #F6F7F9;
+   }
+   main .bookOnMobile button.dataItem{
+        width: 62.62%;
+        justify-content: center;
+        background-color: #E21E26;
+        color: white;
+        border: none;
+   }
+   main .bookOnMobile .data  .options{
+    width: calc(100% - 64px);
+   }
+   #forDifferentDrop{
+    margin-top: 100px;
+    margin-left: 0;
+   }
     main .bookCab .appPromotion{
         padding: 16px 40px;
         width: 100%;
@@ -893,10 +996,78 @@ footer .bottom{
         gap: 18px;
     }
     main .bookCab .appPromotion #appPromotionHead{
-        width: 252px;
+        width: 35%;
+        text-align: center !important;
+    }
+    main .subscribe .rightContainer input{
+        width: 80%;
+    }
+    main .rentSteps{
+        padding: 0 32px;
+    }
+    main .rentSteps .steps{
+        flex-direction: column;
+        align-items: center;
+    } 
+    main .rentSteps .step{
+        width: 328px;
+    }
+    footer{
+        background-color: #D9D9D9;
+    }
+    footer .top{
+        border-bottom: none;
+        padding: 32px;
+    }
+    footer .top .logo{
+        display: none;
+    }
+    #orgLogo{
+        display: block;
+        position: absolute;
+    }
+    footer .top .navs{
+        width: 100%;
+        margin-top: 77px;
+        padding: 0 36px;
+        justify-content: center;
+
+    }
+    footer .top .navs a{
+        align-items: center;
+        justify-content: center;
+    }
+    footer .top .navs strong,  footer .top .navs div:last-child{
+        display: none;
+    }
+    footer .orgCompaniesMobile{
+        color: white;
+        width: 100%;
+        padding: 22px 36px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        row-gap: 12px;
+        column-gap: 34px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.502);
+        background-color: black;     
+    }
+    footer .orgCompaniesMobile p{
+        text-align: center;
+        width: 100%;
+    }
+    footer .followUs{
+        position: absolute;
+        right: 16px;
+    }
+    footer .followUs h3,footer .cards{
+        display: none;
+    }
+    footer .bottom{
+        background-color: #000;
     }
 }
-@media screen and (max-width:805px){
+@media screen and (max-width: 805px){
     header{
         align-items: center;
     }
@@ -909,22 +1080,23 @@ footer .bottom{
         top: 0;
         right: 0;
     }
-    header .rightContainer .socialLinks, #userLogo, header .rightContainer p, header .rightContainer .navigation img{
+    header .rightContainer .socialLinks, #userLogo, header .rightContainer p, header .rightContainer .navigation img,  header .rightContainer .navigation{
         display: none !important;
     }
-   header .rightContainer .navigation{
-        /* display: none !important; */
+    header .rightContainer .navigation.active{
+        display: flex !important;
         z-index: 10;
         background-color: #ffffff;
         position: absolute;
-        right: -32px;
+        right: 0;
         top: 0;
-        padding: 36px 33px 36px 16px ;
+        padding: 56px 0 36px 0 ;
         width: 300px;
         flex-direction: column;
    }
-   header .rightContainer .navigation #closeIcon{
-        display: block;
+   header .rightContainer .navigation.active #closeIcon{
+        z-index: 11;
+        display: flex !important;
         position: absolute;
         top: 16px;
         right: 16px;
@@ -933,15 +1105,238 @@ footer .bottom{
         width: 100%;
         height: 60px;
         padding-top: 19.5px;
-        margin-left: 32px;
+        padding-left: 32px;
         font-size: 14px;
         font-weight: 500;
         line-height: 21px;
         text-align: left;
         border-bottom: 1px solid rgba(0, 0, 0, 0.11);
    }
+   header .rightContainer .navigation .navigationItem:hover{
+        background-color: #D9D9D9;
+   }
+
    header .menuBarIcon{
         display: block;
    }
+   main .popularCar #car-container{
+    height: 333px;
+   }
+   main .popularCar .carItem{
+        flex-direction: column;
+        width: 207px;
+        /* overflow-x: hidden; */
+   }
+   main .popularCar .carItem .carImage{
+        width: 207px;
+   }
 
+   main .popularCar .carItem .carDetails{
+        width: 100%;
+        height: 100%;
+        padding: 0 10px;
+        position: relative;
+    }
+   main .popularCar .carItem .carName{
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 24px;
+        text-align: center;
+   } 
+   main .popularCar .carItem .carFeatures{ 
+        position: absolute;
+        bottom: 72px;   
+        gap: 12px;
+        overflow-x: scroll;
+   }
+   main .popularCar .carItem .feature{
+        margin-right: 16px;
+        min-width: 72px;
+        height: 16px;
+        white-space: nowrap;
+   }
+   main .popularCar .carItem .carDescription{
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 15.6px;
+        text-align: left;
+        color: #00000076;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        -webkit-line-clamp: 3; /* Limit text to 3 lines */
+        line-clamp: 3; /* For modern browsers */
+        height: calc(3 * 1.2em); /* 3 lines with 1.2em line height */
+        line-height: 1.2em; /* Set your desired line height */
+   }
+   main .popularCar .carItem .bookNow{
+        position: absolute;
+        bottom: 8px;
+        flex-direction: column;
+        gap: 4px;
+   }
+   main .popularCar .carItem .bookNow .car-price{
+        font-size: 13px;
+        font-weight: 600;
+        line-height: 19.5px;
+        text-align: left;
+        flex-wrap: nowrap;
+        white-space: nowrap;
+        padding-left: 16px;
+   }
+   main .popularCar .carItem .bookNow button{
+        height: 38px;
+        width: 128px;
+   }
+   main .popularCar .carItem img{
+        width: 100%;
+   }
+    main .rentSteps h1{
+        width: 100%;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
+        text-align: left;
+        /* margin-top: 24px; */
+        margin-bottom: 16px;
+    }
+    main .subscribe{
+        flex-direction: column;
+    }
+    main .subscribe .leftContainer {
+        width: 100%;
+    }    
+    main .subscribe .leftContainer h3{
+        width: 100%;
+    }
+    main .subscribe .leftContainer .inputs{
+        flex-direction: column;
+        gap: 8px;
+    }
+    main .subscribe .leftContainer input{
+        width: 100%;
+        height: 48px;
+    }
+    main .subscribe .leftContainer p{
+    margin-bottom: 16px;
+    }
+    main .subscribe .rightContainer{
+        position: relative;
+        padding: 8px;
+        width: 100%;
+        height: 390px;
+        justify-content: start;
+        align-items: start;
+    }
+    main .subscribe .rightContainer .mobileImg{
+        padding:0;
+        width: 35%;
+        min-width: 123px;
+    }
+    main .subscribe .rightContainer input{
+        width: 97.14%;
+    }
+    main .subscribe .rightContainer .getLink{
+        width: 53.15%;
+    }
+    main .subscribe .rightContainer .appPromotion{
+        position: absolute;
+        color: white;
+        padding-top: 19px;
+        left: 50%;
+        gap: 8px;
+    }
+    main .subscribe .rightContainer .appPromotion .links{
+        flex-direction: column;
+    }
+    main .subscribe .rightContainer .appPromotion .links a{
+        width: 150px;
+        height: 40px;
+        align-items: center;
+        margin: 4px 0;
+    }
+    main .subscribe .rightContainer .links .text{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    main .subscribe .rightContainer .links p{
+        font-weight:200;
+        font-size: 10px;
+    }
+    main .subscribe .rightContainer .links strong{
+        font-size: 16px;
+        font-weight: 500;
+    }
+    main .subscribe .rightContainer label{
+            margin-top: 70%;
+    }
+
+    main .location{
+        margin: 32px;
+        padding: 16px 16px 24px 16px;
+    }
+    main .location h1{
+        font-size: 16px;
+        font-weight: 400;
+        text-align: left;  
+        margin-bottom: 24px;
+    }
+    main .locations{
+    row-gap: 24px;
+    }
+    main .locations a{
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 19.07px;
+        text-align: left;
+    }
+    main .frequentQuestions{
+    margin-left: 32px;
+    margin-right: 32px;
+    }
+}
+@media screen and (max-width: 480px){
+    header{
+        padding: 15px 16px 10px 16px;
+    }
+    main .bookCab{
+        margin: 0px 16px;
+    }
+    main .bookCab .rightContainer{
+        height: max-content;
+    }
+    main .bookCab .rightContainer .inputDiv{
+        position: absolute;
+        margin-left: -30px !important;
+        align-items: start !important;
+        width: 80px !important;
+    }
+    main .bookCab .appPromotion #appPromotion{
+        width: 252px;
+        text-align: left !important;
+    }
+    main .promotion .carItem{
+        padding: 0;
+        border-radius: 0 !important;
+    }
+    main  .carItem img{
+        border-radius: 0 !important;
+    }
+    main .subscribe .rightContainer .label{
+        margin-top: 78% !important;
+        width: 30%;
+        height: 60px;
+        flex-wrap: wrap;
+        overflow-y: visible;
+    }
+    main .subscribe .rightContainer input{
+        /* position: absolute; */
+        margin-left: -40%;
+        width: 100%;
+    }
+    main .subscribe .rightContainer .getLink{
+        margin-left: -40%;
+    }
 }

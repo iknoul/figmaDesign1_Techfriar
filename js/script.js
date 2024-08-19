@@ -110,7 +110,7 @@ const footerNavigationDataB = [
     {   text:"Vehicle Leasing", href:""},
 ]
 
-const Areas = ['Dubbai', 'Abu Dhabi', 'Sharjah', 'Fujairah', 'Ras Al Khaimah']
+const Areas = ['Dubai', 'Abu Dhabi', 'Sharjah', 'Fujairah', 'Ras Al Khaimah']
 
 document.addEventListener("DOMContentLoaded", () => {
     const carTemplate = document.getElementById("car-template");
@@ -148,14 +148,26 @@ document.addEventListener("DOMContentLoaded", () => {
         clone.textContent = loc.name;
 
         const clone1 = clone.cloneNode(true)
+        const clone2 = clone.cloneNode(true)
+        const clone3 = clone.cloneNode(true)
 
         clone.addEventListener('click', function() {
-            const selectPickUp = document.querySelector('.selectPickUp');
+            const selectPickUp = document.querySelector('.bookCab .selectPickUp');
             selectPickUp.classList.remove('active');
             selectPickUp.querySelector('p').textContent = this.textContent;
         });
         clone1.addEventListener('click', function() {
-            const differentDropOff = document.querySelector('.differentDropOff');
+            const differentDropOff = document.querySelector('.bookCab .differentDropOff');
+            differentDropOff.classList.remove('active');
+            differentDropOff.querySelector('p').textContent = this.textContent;
+        });
+        clone2.addEventListener('click', function() {
+            const selectPickUp = document.querySelector('.bookOnMobile .selectPickUp');
+            selectPickUp.classList.remove('active');
+            selectPickUp.querySelector('p').textContent = this.textContent;
+        });
+        clone3.addEventListener('click', function() {
+            const differentDropOff = document.querySelector('.bookOnMobile .differentDropOff');
             differentDropOff.classList.remove('active');
             differentDropOff.querySelector('p').textContent = this.textContent;
         });
@@ -163,6 +175,8 @@ document.addEventListener("DOMContentLoaded", () => {
         // Append the clone to the container
         locationOptions[0].appendChild(clone);
         locationOptions[1].appendChild(clone1);
+        locationOptions[2].appendChild(clone2);
+        locationOptions[3].appendChild(clone3);
 
     })
 
@@ -233,17 +247,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     footerNavigationData.forEach((nav, i) => {
-        let div;
-    
-        // if (i % 4 === 0) {
-        //     div = document.createElement('div');
-        //     div.classList.add('navRow');
-        //     div.style.display = "flex";
-        //     topNavs.appendChild(div);
-        // } else {
-        //     div = document.querySelectorAll('footer .topNavs .navRow')[Math.floor(i/4)];
-        // }
-    
+
         const clone = document.createElement('a');
         clone.classList.add('navItem');
         clone.style.display = "flex";
@@ -268,6 +272,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Append the clone to the container
         bottomNavs.appendChild(clone);
+        document.querySelector('footer .orgCompaniesMobile').appendChild(clone)
     })
 
     Areas.forEach(area=>{
@@ -288,7 +293,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     })
 
-    document.querySelectorAll('main .types .typeItem').forEach((item, i)=>{
+    // document.querySelector('.bookOnMobile').appendChild(document.querySelector('.types').classList.add('mobileTypes'))
+    // document.querySelector('.bookOnMobile').appendChild(document.querySelector('.data').classList.add('mobileDataField'))
+    // document.querySelector('.bookOnMobile').appendChild(document.createElement('button').classList.add('mobileSearchButton'))
+
+
+
+    document.querySelectorAll('main .bookCab .types .typeItem').forEach((item, i)=>{
         item.addEventListener('click', ()=>{
             document.querySelectorAll('.types .typeItem').forEach(itemS => {
                 itemS.classList.remove('active');
@@ -303,28 +314,75 @@ document.addEventListener("DOMContentLoaded", () => {
             item.classList.add('active')
         })
     })
+
+    document.querySelectorAll('main .bookOnMobile .types .typeItem').forEach((item, i)=>{
+        item.addEventListener('click', ()=>{
+            document.querySelectorAll('main .bookOnMobile .types .typeItem').forEach(itemS => {
+                itemS.classList.remove('active');
+                console.log(itemS)
+            });
+            if(i == 1){
+                document.querySelector('.forDifferentDropOff').style.display = 'flex'
+            }
+            else{
+                document.querySelector('.forDifferentDropOff').style.display = 'none'
+            }
+            item.classList.add('active')
+        })
+    })
+
+    
     
     document.querySelectorAll('.types .typeItem')[0].classList.add('active');
+    document.querySelectorAll('.types .typeItem')[2].classList.add('active');
     document.querySelectorAll('.promotion .indicator')[0].classList.add('active');   
     });
 
-    document.querySelector('.selectPickUp').addEventListener('click', function(){
-        this.classList.toggle('active')
+    document.querySelectorAll('.selectPickUp').forEach(item=>{
+        item.addEventListener('click', function(){
+            this.classList.toggle('active')
+        })
     })
-    document.querySelector('.differentDropOff').addEventListener('click', function(){
-        this.classList.toggle('active')
+    document.querySelectorAll('.differentDropOff').forEach(item=>{
+        item.addEventListener('click', function(){
+            this.classList.toggle('active')
+        })
     })
-    // Close the dropdown if clicked outside of it
-    document.addEventListener('click', function(event) {
+    document.querySelector('.menuBarIcon').addEventListener('click', function(){
+        console.log('df')
+        document.querySelector('.navigation').classList.toggle('active')
+    })
+    document.querySelector('#closeIcon').addEventListener('click',()=>{
+        document.querySelector('.navigation').classList.toggle('active')
+    } )
+
+    document.querySelectorAll('.bookButtonsMobile button').forEach(item=>{
+        item.addEventListener('click', function(){
+            if(this.classList.contains('active')){ 
+                this.classList.remove('active')
+                document.querySelector('main .bookOnMobile').style.display = 'none'
+            }
+            else{
+                this.classList.add('active')
+                document.querySelector('main .bookOnMobile').style.display = 'flex'
+            }
+        });
+    })
+
+    document.querySelector('main .mobileSearchButton').addEventListener('click', function(){
+        document.querySelector('.bookButtonsMobile .book').classList.remove('active')
+        document.querySelector('main .bookOnMobile').style.display = 'none'
+    });
+
+     // Close the dropdown if clicked outside of it
+     document.addEventListener('click', function(event) {
         const selectPickUp = document.querySelector('.selectPickUp');
         const optionsContainer = document.querySelector('.options');
     
         if (!selectPickUp.contains(event.target) && !optionsContainer.contains(event.target)) {
             selectPickUp.classList.remove('active');
         }
-    });
-
-    
+    }); 
 
  let currentIndex = 0;
 function moveToSlide(index) {
