@@ -23,7 +23,7 @@ const carData = [
     {
         name: "Mitsubishi Eclipse",
         description: "Eclipse Cross is a fusion of sharp coupe looks and dynamic SUV mobility with signature Mitsubishi styling, technology and driving confidence.",
-        src: "../public/images/popularCar1.svg",
+        src: "./public/images/popularCar1.svg",
         features: {
             people: "5 People",
             transmission: "Automatic",
@@ -36,7 +36,7 @@ const carData = [
     {
         name: "Mitsubishi Outlander",
         description: "Outlander offers superior safety features and modern styling.",
-        src: "../public/images/popularCar2.svg",
+        src: "./public/images/popularCar2.svg",
         features: {
             people: "7 People",
             transmission: "Automatic",
@@ -48,7 +48,7 @@ const carData = [
     {
         name: "Mitsubishi Eclipse",
         description: "Eclipse Cross is a fusion of sharp coupe looks and dynamic SUV mobility.",
-        src: "../public/images/popularCar1.svg",
+        src: "./public/images/popularCar1.svg",
         features: {
             people: "5 People",
             transmission: "Automatic",
