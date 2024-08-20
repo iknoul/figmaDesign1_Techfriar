@@ -1342,8 +1342,13 @@ footer .orgCompaniesMobile{
         text-align: left;
     }
     main .frequentQuestions{
-    margin-left: 32px;
-    margin-right: 32px;
+        margin-left: 32px;
+        margin-right: 32px;
+    }
+    main .frequentQuestions h1{
+        font-size: 16px;
+        font-weight: 400;
+        text-align: left;
     }
 }
 @media screen and (max-width: 480px){
