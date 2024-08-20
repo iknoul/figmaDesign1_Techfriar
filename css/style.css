@@ -397,7 +397,7 @@ main .promotion .carImages {
     transition: transform 0.7s ease;
 }
 main .promotion .carItem {
-    padding: 0 64px;
+    padding: 0;
     overflow-x: hidden;
     min-width: 100%; /* Ensures each image takes up 100% of the container width */
     height: 405px;
@@ -1342,8 +1342,13 @@ footer .orgCompaniesMobile{
         text-align: left;
     }
     main .frequentQuestions{
-    margin-left: 32px;
-    margin-right: 32px;
+        margin-left: 32px;
+        margin-right: 32px;
+    }
+    main .frequentQuestions h1{
+        font-size: 16px;
+        font-weight: 400;
+        text-align: left;
     }
 }
 @media screen and (max-width: 480px){
@@ -1366,14 +1371,11 @@ footer .orgCompaniesMobile{
         width: 100%;
     }
     main .promotion .carItem{
-        padding: 0 16px;
+        padding: 0;
         border-radius: 0 !important;
     }
-    main .promotion .carItem{
-        padding: 0 16px;
-    }
-    main  .carItem img{
-        border-radius: 0 !important;
+    main  .promotion, main .promotion .carItem img{
+        border-radius: 0;
     }
     main .popularCar #car-container{
         width: calc(100% - 16px);
@@ -1383,7 +1385,6 @@ footer .orgCompaniesMobile{
     main .subscribe{
         margin-left: 16px;
     }
-    
     main .subscribe .rightContainer label{
         position: absolute;
         width: 250px;

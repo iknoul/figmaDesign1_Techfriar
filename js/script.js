@@ -130,10 +130,15 @@ document.addEventListener("DOMContentLoaded", () => {
         clone.classList.add('navigationItem')
         clone.style.display = "flex";
 
-        // Update the cloned template with car data
+        // Update the cloned template with navigation data
         clone.href = nav.href;
         clone.textContent = nav.name;
 
+        clone.addEventListener('click',()=>{
+            if(window.innerWidth<=805){
+                document.querySelector('.navigation').classList.remove('active')
+            }
+        })
         // Append the clone to the container
         navContainer.insertBefore(clone, navContainer.firstChild);
     });
@@ -144,7 +149,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         clone.style.display = "block";
 
-        // Update the created template with car data
+        // Update the created template with location data
         clone.textContent = loc.name;
 
         const clone1 = clone.cloneNode(true)
@@ -227,7 +232,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const clone = questionItemTemple.cloneNode(true);
         clone.style.display = "flex";
 
-        // Update the cloned template with car data
+        // Update the cloned template with question data
         clone.querySelector('.question h3').textContent = question.question;
         clone.querySelector('.answer').textContent = question.answer;
         clone.addEventListener('click', ()=>{
@@ -266,7 +271,7 @@ document.addEventListener("DOMContentLoaded", () => {
         clone.classList.add('navItem');
         clone.style.display = "flex";
 
-        // Update the cloned template with car data
+        // Update the cloned template with navigation 2 data
         clone.href = nav.href;
         clone.textContent = nav.text;
         const clone1 = clone.cloneNode(true)
@@ -275,6 +280,21 @@ document.addEventListener("DOMContentLoaded", () => {
         bottomNavs.appendChild(clone);
         document.querySelector('footer .orgCompaniesMobile').appendChild(clone1)
     })
+
+    // adding extra image card(secure) to second section of footer 
+    const orgCompaniesMobileImage = document.createElement('img')
+    const orgCompaniesMobileCard = document.createElement('div');
+
+    orgCompaniesMobileCard.style.display = 'flex';
+    orgCompaniesMobileCard.style.width = '100%';
+    orgCompaniesMobileCard.style.justifyContent = 'center';
+    orgCompaniesMobileImage.src = './public/icons/secureCard2.svg';
+    orgCompaniesMobileImage.style.backgroundColor = 'white';
+    orgCompaniesMobileImage.style.padding = '6.35px';
+    orgCompaniesMobileImage.style.borderRadius = '4px';
+
+    orgCompaniesMobileCard.appendChild(orgCompaniesMobileImage)
+    document.querySelector('footer .orgCompaniesMobile').appendChild(orgCompaniesMobileCard);
 
     Areas.forEach(area=>{
         const clone = document.createElement('div')
@@ -298,7 +318,6 @@ document.addEventListener("DOMContentLoaded", () => {
         item.addEventListener('click', ()=>{
             document.querySelectorAll('.types .typeItem').forEach(itemS => {
                 itemS.classList.remove('active');
-                console.log(itemS)
             });
             if(i == 1){
                 document.querySelector('.differentDropOff').style.display = 'flex'
@@ -314,7 +333,6 @@ document.addEventListener("DOMContentLoaded", () => {
         item.addEventListener('click', ()=>{
             document.querySelectorAll('main .bookOnMobile .types .typeItem').forEach(itemS => {
                 itemS.classList.remove('active');
-                console.log(itemS)
             });
             if(i == 1){
                 document.querySelector('.forDifferentDropOff').style.display = 'flex'
@@ -355,14 +373,11 @@ document.addEventListener("DOMContentLoaded", () => {
         })
     })
     document.querySelector('.menuBarIcon').addEventListener('click', function(){
-        console.log('df')
         document.querySelector('.navigation').classList.toggle('active')
     })
     document.querySelector('#closeIcon').addEventListener('click',()=>{
         document.querySelector('.navigation').classList.toggle('active')
     } )
-
-
     document.querySelector('main .mobileSearchButton').addEventListener('click', function(){
         document.querySelector('.bookButtonsMobile .book').classList.remove('active')
         document.querySelector('main .bookOnMobile').style.display = 'none'
@@ -396,7 +411,6 @@ function moveToSlide(index) {
 function autoSlide() {
     const slides = document.querySelectorAll('.promotion .carItem');    
     currentIndex = (currentIndex + 1) % slides.length;
-    console.log(currentIndex, slides.length)
     moveToSlide(currentIndex);
 }
 
